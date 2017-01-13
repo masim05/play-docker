@@ -2,6 +2,7 @@ let http = require('http');
 let url = require('url');
 
 var server = http.createServer( (req, res) => {
+	console.log(new Date(), "request: ", req.url)
 	let uri = url.parse(req.url, true)
 	let timeout = uri.query.timeout || uri.query.t || 500
 	setTimeout(function(){
